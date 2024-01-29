@@ -9,7 +9,7 @@ sudo apt-get install git -y
 git clone https://github.com/hmmmq/mp2.git
 
 # 进入 Flask 应用目录
-cd ~/flaskProject1
+cd ~/mp2/flaskProject1
 
 # 安装依赖
 pip3 install -r requirements.txt
