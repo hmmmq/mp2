@@ -1,0 +1,7 @@
+click
+Flask
+importlib-metadata
+Jinja2
+MarkupSafe
+Werkzeug
+zipp
