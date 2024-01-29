@@ -4,7 +4,7 @@
 sudo apt-get update
 sudo apt-get install -y python3-pip unzip
 sudo pip3 install gunicorn
-
+sudo apt-get install git -y
 # 解压 Flask 应用
 git clone https://github.com/hmmmq/mp2.git
 
