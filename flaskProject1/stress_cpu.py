@@ -1,5 +1,4 @@
-from multiprocessing import Pool
-from multiprocessing import cpu_count
+from multiprocessing import Pool, cpu_count
 import time
 
 # Do intensive computation to stress the CPU
@@ -9,9 +8,16 @@ def stress_cpu(n):
         total += i**2
     return total
 
-start_time = time.time()
-# Create as many as processes as there are CPU cores
-processes = cpu_count()
-pool = Pool(processes)
-print(pool.map(stress_cpu, [110000000, 110000000]))
-print("time cost: ", time.time() - start_time)
+def main():
+    start_time = time.time()
+
+    # Create as many processes as there are CPU cores
+    processes = cpu_count()
+    with Pool(processes) as pool:
+        results = pool.map(stress_cpu, [110000000, 110000000])
+        print(results)
+
+    print("time cost: ", time.time() - start_time)
+
+if __name__ == '__main__':
+    main()
